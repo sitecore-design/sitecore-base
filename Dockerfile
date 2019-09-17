@@ -1,6 +1,15 @@
 # escape=`
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1803
 
+MAINTAINER  devops <devops@aem.design>
+
+LABEL   os="windows" \
+        container.description="base image for sitecore builds" \
+        version="1803" \
+        imagename="sitecore-base" \
+        test.command="" \
+        test.command.verify=""
+
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 ENV INSTALL_TEMP='c:\\install'
