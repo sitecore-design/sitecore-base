@@ -1,2 +1,1 @@
-# sitecore-base
-Base image used for Sitecore builds
+## Sitecore on Windows
