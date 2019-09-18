@@ -4,7 +4,7 @@ services: docker
 
 os: windows
 
-before_script:
+install:
   - docker version
   - env | sort
   - export IMAGE_NAME=$(grep imagename= Dockerfile | sed -e 's/.*imagename="\(.*\)".*/\1/')
@@ -13,8 +13,6 @@ before_script:
   - echo IMAGE_VERSION=$IMAGE_VERSION
   - export IMAGE="$ORGANISATION_NAME/$IMAGE_NAME"
   - echo IMAGE=$IMAGE
-
-install:
   - docker build --pull -t $IMAGE:$IMAGE_VERSION .
   - docker images
 
