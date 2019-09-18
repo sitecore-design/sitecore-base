@@ -1,11 +1,11 @@
 # escape=`
-FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1803
+FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-1903
 
 MAINTAINER  devops <devops@aem.design>
 
-LABEL os="windows"
+LABEL os="windowsservercore"
 LABEL description="base image for sitecore builds"
-LABEL version="1803"
+LABEL version="1903"
 LABEL imagename="sitecore-base"
 LABEL test.command=""
 LABEL test.command.verify=""
