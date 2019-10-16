@@ -2,7 +2,7 @@ Param(
     # Set DockerHub Username, Password & Repo Details
     [string] $API_URL_DEFAULT = 'https://hub.docker.com/v2',
     [string] [Parameter(Mandatory=$true)] $USERNAME,
-    [string] [Parameter(Mandatory=$true)] $PASSWORD,
+    [securestring] [Parameter(Mandatory=$true)] $PASSWORD,
     [string] [Parameter(Mandatory=$true)] $REPO,
     [string] [Parameter(Mandatory=$true)] $README,
     [string] $API_URL = $API_URL_DEFAULT    
@@ -31,10 +31,6 @@ if ($response -and $response.user) {
 }  
 else {
     Write-Host " Failed to update DockerHub "
-    Write-Host "$USERNAME"
-    Write-Host "$PASSWORD"
-    Write-Host "$README"
-    Write-Host "$API_URL"
     exit 1
 }
 
